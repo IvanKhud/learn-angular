@@ -1,3 +1,7 @@
 <div class="main-container">
-  <app-product name="some product" description="some description" price="1" category="Electronics" isAvailable="true"></app-product>
+  <ul *ngFor="let product of products">
+    <li>
+        <app-product name={{product.name}} description={{product.description}} price={{product.price}} category={{product.category}} isAvailable={{product.isAvailable}}></app-product>
+    </li>
+  </ul>
 </div>

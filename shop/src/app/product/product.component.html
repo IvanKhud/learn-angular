@@ -2,7 +2,9 @@
   <span class="product__name">{{name}}</span>
   <span class="product__description">{{description}}</span>
   <span class="product__category">{{category}}</span>
-  <span class="product__price">{{price}}</span>
-  <span class="product__is-available">{{isAvailable}}</span>
+  <span class="product__price">{{price}} $</span>
+  <div *ngIf="isAvailable;then available else notAvailable"></div>    
+    <ng-template #available><span>available</span></ng-template>
+    <ng-template #notAvailable><span>not available</span></ng-template>
   <button (click)="onBuy()">Buy</button>
 </div>
