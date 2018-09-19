@@ -20,4 +20,4 @@ export const Products = [
         category: 'Clothing',
         isAvailable: true,
     },
-]
+];

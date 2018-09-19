@@ -1,31 +1,24 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-enum Category {
-  Electronics = 'Electronics',
-  Clothing = 'Clothing',
-  Toys = 'Toys',
-}
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
 
-  @Input() name: string;
-  @Input() description: string;
-  @Input() price: number;
-  @Input() category: Category;
-  @Input() isAvailable: boolean;
+  @Input() product: Product;
 
-  constructor() { }
+  @Output() addToCart: EventEmitter<Product> = new EventEmitter<Product>();
 
-  ngOnInit() {
-  }
+  constructor(
+  ) {}
 
   public onBuy(): void {
-    console.log('You bought ' + this.name);
+    console.log('You bought ' + this.product.name);
+    this.addToCart.emit(this.product);
   }
 
 }

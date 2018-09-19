@@ -1,7 +1,7 @@
 <div class="main-container">
-  <ul *ngFor="let product of products">
-    <li>
-        <app-product name={{product.name}} description={{product.description}} price={{product.price}} category={{product.category}} isAvailable={{product.isAvailable}}></app-product>
-    </li>
-  </ul>
+  <app-product-list 
+    products="products"
+    (addToCart)="onAddToCart($event)">
+  </app-product-list>
+  <app-cart [cartList]="cartList"></app-cart>
 </div>

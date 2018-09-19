@@ -10,6 +10,10 @@
     font-size: 18px;
 }
 
+.product span {
+    margin: auto;
+}
+
 .product__name {
     font-size: 18px;
     text-transform: uppercase;

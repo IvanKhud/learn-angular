@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Products } from './products';
+import { Product } from './product/product.model';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,9 @@ import { Products } from './products';
 })
 export class AppComponent {
   title = 'shop';
-  products = Products;
+  cartList: Array<Product> = [];
+
+  onAddToCart(product: Product): void {
+    this.cartList.push(product);
+  }
 }
