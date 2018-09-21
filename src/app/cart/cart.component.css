@@ -7,4 +7,15 @@
     margin-top: 50px;
     padding: 20px;
     border: 2px solid grey;
+    border-radius: 5px;
+    background-color: rgb(236, 234, 234);
+}
+
+.cart-list span {
+    padding: 5px;
+}
+
+.cart-list h3 {
+    text-transform: uppercase;
+    margin: auto;
 }
