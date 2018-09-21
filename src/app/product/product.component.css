@@ -28,3 +28,7 @@
     font-size: 16px;
     color: grey;
 }
+
+.product__notAvailable {
+    color: red;
+}

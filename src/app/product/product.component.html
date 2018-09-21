@@ -3,6 +3,6 @@
   <span class="product__description">{{product.description}}</span>
   <span class="product__category">{{product.category}}</span>
   <span class="product__price">{{product.price}} $</span>
-  <span>{{product.isAvailable}}</span>
+  <span [ngClass]="{product__notAvailable: !product.isAvailable}">{{product.isAvailable ? 'available' : 'not available'}}</span>
   <button (click)="onBuy($event)">Buy</button>
 </div>
