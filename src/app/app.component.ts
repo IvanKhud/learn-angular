@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Product } from './product/product.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shop';
+  cartList: Array<Product> = [];
+
+  onAddToCart(product: Product): void {
+    this.cartList.push(product);
+  }
 }
