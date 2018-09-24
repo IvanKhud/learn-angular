@@ -11,11 +11,5 @@ export class Product {
         public price: number,
         public category: Category,
         public isAvailable: boolean,
-    ) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.category = category;
-        this.isAvailable = isAvailable;
-    }
+    ) {}
 }
