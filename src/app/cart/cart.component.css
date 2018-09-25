@@ -11,13 +11,14 @@
     background-color: rgb(236, 234, 234);
 }
 
-.cart-list span {
-    padding: 5px;
-}
-
 .cart-list h3 {
     text-transform: uppercase;
-    margin: auto;
     padding: 5px;
     font-size: 16px;
+}
+
+.cart-list-price,
+.cart-list-number {
+    padding: 5px;
+    font-weight:bold; 
 }

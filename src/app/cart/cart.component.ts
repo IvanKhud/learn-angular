@@ -13,4 +13,17 @@ export class CartComponent {
 
   constructor() { }
 
+  getTotalPrice(): number {
+    return this.cartList ?
+      this.cartList.reduce((result, item) => {
+        return result + item.price;
+      }, 0)
+      :
+      0;
+  }
+
+  getNumberOfItems(): number {
+    return this.cartList ? this.cartList.length : 0;
+  }
+
 }

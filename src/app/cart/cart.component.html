@@ -1,5 +1,9 @@
-<div *ngIf="cartList.length; else emptyCart" class="cart-list">
+<div class="cart-list">
+<div *ngIf="cartList.length; else emptyCart">
   <h3>Cart list</h3>
-  <span *ngFor="let product of cartList">{{product.name}}</span>
+  <div *ngFor="let product of cartList">{{product.name}} : {{product.price}} $</div>
 </div>
-<ng-template #emptyCart><div class="cart-list"><h3>Cart is empty</h3></div></ng-template>
+<ng-template #emptyCart><h3>Cart is empty</h3></ng-template>
+<div class="cart-list-price">Total price: {{getTotalPrice()}} $</div>
+<div class="cart-list-number">Number of items: {{getNumberOfItems()}}</div>
+</div>
