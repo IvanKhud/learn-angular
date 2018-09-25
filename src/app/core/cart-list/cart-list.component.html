@@ -1,7 +1,9 @@
 <div class="cart-list">
   <div *ngIf="cartList.length; else emptyCart">
     <h3>Cart list</h3>
-    <div *ngFor="let product of cartList">{{product.name}} : {{product.price}} $</div>
+    <div *ngFor="let product of cartList">
+      <app-cart-item [product]="product"></app-cart-item>
+    </div>
   </div>
   <ng-template #emptyCart>
     <h3>Cart is empty</h3>
