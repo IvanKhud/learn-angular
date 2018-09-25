@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { Product } from './product/product.model';
+import { CartService } from './shared/services/cart.service';
 
-import { CartService } from './cart/cart.service';
+import { Product } from './shared/models/product.model';
 
 @Component({
   selector: 'app-root',

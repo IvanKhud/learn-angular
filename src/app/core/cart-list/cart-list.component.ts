@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Product } from '../product/product.model';
+import { Product } from '../../shared/models/product.model';
 
-import { CartService } from './cart.service';
+import { CartService } from '../../shared/services/cart.service';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: 'app-cart-list',
+  templateUrl: './cart-list.component.html',
+  styleUrls: ['./cart-list.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartListComponent implements OnInit {
 
   cartList: Array<Product>;
 

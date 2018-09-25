@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Product } from './product.model';
+import { Product } from '../../shared/models/product.model';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  selector: 'app-product-item',
+  templateUrl: './product-item.component.html',
+  styleUrls: ['./product-item.component.css']
 })
-export class ProductComponent {
+export class ProductItemComponent {
 
   @Input() product: Product;
 
