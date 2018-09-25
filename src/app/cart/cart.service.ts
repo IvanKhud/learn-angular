@@ -5,7 +5,7 @@ import { Product } from '../product/product.model';
 @Injectable()
 export class CartService {
 
-    private cartList: Array<Product>;
+    private cartList = [] as Array<Product>;
 
     constructor() {}
 
@@ -16,4 +16,18 @@ export class CartService {
     getCartList(): Array<Product> {
         return this.cartList;
     }
+
+    getTotalPrice(): number {
+        return this.cartList ?
+            this.cartList.reduce((result, item) => {
+                return result + item.price;
+            }, 0)
+            :
+            0;
+    }
+
+    getNumberOfItems(): number {
+        return this.cartList ? this.cartList.length : 0;
+    }
+
 }

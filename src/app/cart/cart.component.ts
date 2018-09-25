@@ -1,29 +1,30 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Product } from '../product/product.model';
+
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
 
-  @Input() cartList: Array<Product>;
+  cartList: Array<Product>;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   getTotalPrice(): number {
-    return this.cartList ?
-      this.cartList.reduce((result, item) => {
-        return result + item.price;
-      }, 0)
-      :
-      0;
+    return this.cartService.getTotalPrice();
   }
 
   getNumberOfItems(): number {
-    return this.cartList ? this.cartList.length : 0;
+    return this.cartService.getNumberOfItems();
+  }
+
+  ngOnInit() {
+    this.cartList = this.cartService.getCartList();
   }
 
 }
