@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Product } from '../../shared/models/product.model';
+import { Product, CartItem } from '../../shared/models/product.model';
 
 import { CartService } from '../../shared/services/cart.service';
 
@@ -11,7 +11,7 @@ import { CartService } from '../../shared/services/cart.service';
 })
 export class CartListComponent implements OnInit {
 
-  cartList: Array<Product>;
+  cartList: Array<CartItem>;
 
   constructor(private cartService: CartService) { }
 

@@ -14,3 +14,10 @@ export class Product {
         public id: string,
     ) {}
 }
+
+export class CartItem {
+    constructor(
+        public product: Product,
+        public quantity: number,
+    ) {}
+}

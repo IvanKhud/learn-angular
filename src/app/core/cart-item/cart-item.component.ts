@@ -9,6 +9,7 @@ import { Product } from '../../shared/models/product.model';
 export class CartItemComponent implements OnInit {
 
   @Input() product: Product;
+  @Input() quantity: number;
 
   constructor() { }
 
