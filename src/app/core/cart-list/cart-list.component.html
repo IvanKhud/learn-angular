@@ -1,13 +1,13 @@
 <div class="cart-list">
   <div *ngIf="cartList.length; else emptyCart">
-    <h3>Cart list</h3>
-    <div *ngFor="let cartItem of cartList">
+    <h3 class="cart-list-title">Cart list</h3>
+    <div *ngFor="let cartItem of cartList" class="cart-list-item">
       <app-cart-item [product]="cartItem.product" [quantity]="cartItem.quantity"></app-cart-item>
     </div>
+    <div class="cart-list-price">Total price: {{getTotalPrice()}} $</div>
+    <div class="cart-list-number">Number of items: {{getNumberOfItems()}}</div>
   </div>
   <ng-template #emptyCart>
-    <h3>Cart is empty</h3>
+    <h3 class="cart-list-title">Cart is empty</h3>
   </ng-template>
-  <div class="cart-list-price">Total price: {{getTotalPrice()}} $</div>
-  <div class="cart-list-number">Number of items: {{getNumberOfItems()}}</div>
 </div>
