@@ -23,8 +23,12 @@ export class CartListComponent implements OnInit {
     return this.cartService.getNumberOfItems();
   }
 
-  changeQuantity(change: any) {
+  changeQuantity(change: any): void {
     this.cartService.changeQuantity(change.id, change.quantity);
+  }
+
+  deleteItem(id: string): void {
+    this.cartService.deleteItem(id);
   }
 
   ngOnInit() {

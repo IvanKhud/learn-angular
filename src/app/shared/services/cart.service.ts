@@ -43,10 +43,24 @@ export class CartService {
   }
 
   changeQuantity(id: string, value: number) {
-    this.cartList.forEach(item => {
+    if (value > 0) {
+      this.cartList.forEach(item => {
+        if (item.product.id === id) {
+          item.quantity = value;
+        }
+      });
+    } else {
+      this.deleteItem(id);
+    }
+  }
+
+  deleteItem(id: string): void {
+    let currentIndex: number;
+    this.cartList.forEach((item, index) => {
       if (item.product.id === id) {
-        item.quantity = value;
+        currentIndex = index;
       }
     });
+    this.cartList.splice(currentIndex, 1);
   }
 }
