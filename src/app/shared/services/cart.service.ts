@@ -41,4 +41,12 @@ export class CartService {
   getNumberOfItems(): number {
     return this.cartList ? this.cartList.length : 0;
   }
+
+  changeQuantity(id: string, value: number) {
+    this.cartList.forEach(item => {
+      if (item.product.id === id) {
+        item.quantity = value;
+      }
+    });
+  }
 }

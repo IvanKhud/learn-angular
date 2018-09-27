@@ -2,7 +2,7 @@
   <div *ngIf="cartList.length; else emptyCart">
     <h3 class="cart-list-title">Cart list</h3>
     <div *ngFor="let cartItem of cartList" class="cart-list-item">
-      <app-cart-item [product]="cartItem.product" [quantity]="cartItem.quantity"></app-cart-item>
+      <app-cart-item [product]="cartItem.product" [quantity]="cartItem.quantity" (changeQuantity)="changeQuantity($event)"></app-cart-item>
     </div>
     <div class="cart-list-price">Total price: {{getTotalPrice()}} $</div>
     <div class="cart-list-number">Number of items: {{getNumberOfItems()}}</div>
