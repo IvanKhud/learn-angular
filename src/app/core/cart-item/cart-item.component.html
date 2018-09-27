@@ -1,4 +1,4 @@
-<div>
+<div appItemHover>
     <span>{{product.name}} : {{product.price}} $,  quantity: </span>
     <input #quantityInput [value]="quantity" on-change="onQuantityChange({id: product.id, quantity: quantityInput.value})" class="cart-item-input"/>
 </div>

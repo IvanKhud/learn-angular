@@ -5,6 +5,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { ItemHoverDirective } from './directives/item-hover.directive';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { CartItemComponent } from './cart-item/cart-item.component';
     ProductListComponent,
     CartListComponent,
     ProductItemComponent,
-    CartItemComponent
+    CartItemComponent,
+    ItemHoverDirective,
   ]
 })
 export class CoreModule {}
