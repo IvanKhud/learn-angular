@@ -10,5 +10,5 @@
   <ng-template #emptyCart>
     <h3 class="cart-list-title">Cart is empty</h3>
   </ng-template>
-  <button (click)="clearCart()">Clear Cart</button>
+  <button (click)="clearCart()" *ngIf="getNumberOfItems() > 0">Clear Cart</button>
 </div>
