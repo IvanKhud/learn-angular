@@ -8,6 +8,8 @@ import { Product, CartItem } from '../models/product.model';
 export class CartService {
 
   private cartList = [] as Array<CartItem>;
+  private totalPrice = 0;
+  private numberOfItems = 0;
 
   constructor() { }
 
@@ -27,6 +29,11 @@ export class CartService {
 
   getCartList(): Array<CartItem> {
     return this.cartList;
+  }
+
+  reCalculate(): void {
+    this.numberOfItems = this.getNumberOfItems();
+    this.totalPrice = this.getTotalPrice();
   }
 
   getTotalPrice(): number {
@@ -52,6 +59,7 @@ export class CartService {
     } else {
       this.deleteItem(id);
     }
+    this.reCalculate();
   }
 
   deleteItem(id: string): void {
@@ -62,10 +70,12 @@ export class CartService {
       }
     });
     this.cartList.splice(currentIndex, 1);
+    this.reCalculate();
   }
 
   clearCart(): void {
     this.cartList = [];
+    this.reCalculate();
   }
 
 }
