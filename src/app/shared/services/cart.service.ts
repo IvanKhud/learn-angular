@@ -63,4 +63,9 @@ export class CartService {
     });
     this.cartList.splice(currentIndex, 1);
   }
+
+  clearCart(): void {
+    this.cartList = [];
+  }
+
 }

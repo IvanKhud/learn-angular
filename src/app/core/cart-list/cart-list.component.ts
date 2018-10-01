@@ -31,6 +31,11 @@ export class CartListComponent implements OnInit {
     this.cartService.deleteItem(id);
   }
 
+  clearCart(): void {
+    this.cartService.clearCart();
+    this.cartList = this.cartService.getCartList();
+  }
+
   ngOnInit() {
     this.cartList = this.cartService.getCartList();
   }
