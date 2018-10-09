@@ -20,8 +20,10 @@ export class ProductListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.productList = this.productListService.getList();
-    console.log(this.productList);
+  }
+
+  getProductList() {
+    return this.productListService.getList;
   }
 
   onAddToCart(product: Product): void {
